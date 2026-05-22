@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade – Habitus</title>
+  <style>
+    :root {
+      --primary: #7C3AED;
+      --primary-dark: #5B21B6;
+      --primary-light: #EDE9FE;
+      --green: #166534;
+      --green-bg: #DCFCE7;
+      --red: #991B1B;
+      --red-bg: #FEE2E2;
+      --yellow: #854D0E;
+      --yellow-bg: #FEF9C3;
+      --blue: #1E3A5F;
+      --blue-bg: #DBEAFE;
+      --text: #1F2937;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --bg: #FFFFFF;
+      --section-bg: #F9FAFB;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      padding: 52px 24px 44px;
+      text-align: center;
+    }
+    header .app-name {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 8px;
+    }
+    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
+    header .meta { opacity: 0.8; font-size: 0.9rem; }
+    .store-badges {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .store-badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .toc {
+      background: var(--section-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+    .toc h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .toc ol { padding-left: 18px; }
+    .toc li { margin-bottom: 4px; }
+    .toc a { color: var(--primary); text-decoration: none; font-size: 0.9rem; }
+    .toc a:hover { text-decoration: underline; }
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    section {
+      margin-bottom: 52px;
+      scroll-margin-top: 20px;
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+      margin-bottom: 18px;
+    }
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin: 22px 0 8px;
+      color: var(--text);
+    }
+    p { margin-bottom: 12px; color: #374151; font-size: 0.93rem; }
+    ul, ol { padding-left: 20px; margin-bottom: 12px; }
+    li { margin-bottom: 5px; color: #374151; font-size: 0.93rem; }
+    .card {
+      background: var(--section-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 14px;
+    }
+    .card p:last-child { margin-bottom: 0; }
+    .card-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.93rem;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      border-radius: 4px;
+      padding: 2px 7px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .tag-yes    { background: var(--green-bg); color: var(--green); }
+    .tag-no     { background: var(--red-bg); color: var(--red); }
+    .tag-opt    { background: var(--yellow-bg); color: var(--yellow); }
+    .tag-info   { background: var(--blue-bg); color: var(--blue); }
+    .highlight {
+      border-left: 4px solid var(--primary);
+      background: var(--primary-light);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 16px;
+      font-size: 0.93rem;
+      color: var(--primary-dark);
+    }
+    .highlight strong { color: var(--primary-dark); }
+    .warning {
+      border-left: 4px solid #D97706;
+      background: #FFFBEB;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      color: #92400E;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 0.86rem;
+    }
+    th {
+      background: var(--primary);
+      color: #fff;
+      text-align: left;
+      padding: 10px 13px;
+      font-weight: 600;
+      font-size: 0.82rem;
+    }
+    td { padding: 9px 13px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: var(--section-bg); }
+    .store-section {
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .store-section-header {
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .store-section-body { padding: 16px 20px; }
+    .store-section-header.google {
+      background: #E8F5E9;
+      color: #1B5E20;
+      border-bottom: 2px solid #C8E6C9;
+    }
+    .store-section-header.apple {
+      background: #F5F5F7;
+      color: #1D1D1F;
+      border-bottom: 2px solid #D2D2D7;
+    }
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li { padding-left: 24px; position: relative; margin-bottom: 6px; font-size: 0.9rem; }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      line-height: 1.8;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      .container { padding: 32px 16px 60px; }
+      table { font-size: 0.78rem; }
+      th, td { padding: 7px 9px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-name">Habitus</div>
+  <h1>Política de Privacidade</h1>
+  <div class="meta">Última atualização: 22 de maio de 2026 &nbsp;·&nbsp; Versão 1.0</div>
+  <div class="store-badges">
+    <span class="store-badge">✓ Google Play Store</span>
+    <span class="store-badge">✓ Apple App Store</span>
+    <span class="store-badge">✓ LGPD</span>
+    <span class="store-badge">✓ GDPR</span>
+    <span class="store-badge">✓ COPPA</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="toc">
+    <h3>Índice</h3>
+    <ol>
+      <li><a href="#sec1">Quem somos</a></li>
+      <li><a href="#sec2">Quais dados coletamos</a></li>
+      <li><a href="#sec3">Como usamos seus dados</a></li>
+      <li><a href="#sec4">Permissões do dispositivo</a></li>
+      <li><a href="#sec5">Compartilhamento e provedores de serviço</a></li>
+      <li><a href="#sec6">Funcionalidades sociais</a></li>
+      <li><a href="#sec7">Armazenamento e segurança</a></li>
+      <li><a href="#sec8">Retenção e exclusão de dados</a></li>
+      <li><a href="#sec9">Proteção de menores</a></li>
+      <li><a href="#sec10">Seus direitos (LGPD)</a></li>
+      <li><a href="#sec11">Notificações</a></li>
+      <li><a href="#sec12">Transferência internacional de dados</a></li>
+      <li><a href="#sec13">Guia para as lojas: Data Safety e Privacy Labels</a></li>
+      <li><a href="#sec14">Alterações nesta política</a></li>
+      <li><a href="#sec15">Contato</a></li>
+    </ol>
+  </div>
+
+  <section id="sec1">
+    <h2>1. Quem Somos</h2>
+    <div class="card">
+      <p><strong>Desenvolvedor:</strong> Lucas Souza Santos</p>
+      <p><strong>Aplicativo:</strong> Habitus – Rastreador de Hábitos</p>
+      <p><strong>Plataformas:</strong> Android (Google Play) e iOS (App Store)</p>
+      <p><strong>Identificador do pacote (Android):</strong> com.apphabitus</p>
+      <p><strong>E-mail de privacidade:</strong> <a href="mailto:lucassouzasantos336@gmail.com">lucassouzasantos336@gmail.com</a></p>
+    </div>
+    <p>
+      Esta Política de Privacidade descreve como o Habitus coleta, usa, armazena e protege as
+      informações pessoais dos seus usuários. Ao criar uma conta ou usar o aplicativo, você
+      declara ter lido e concordado com este documento.
+    </p>
+    <p>
+      Esta política está em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD –
+      Lei nº 13.709/2018)</strong>, com o <strong>Regulamento Geral de Proteção de Dados da
+      União Europeia (GDPR)</strong>, com a <strong>Lei de Proteção de Privacidade Online de
+      Crianças dos EUA (COPPA)</strong>, e com as <strong>Políticas de Dados do Usuário do
+      Google Play</strong> e as <strong>Diretrizes de Revisão da Apple App Store</strong>.
+    </p>
+  </section>
+
+  <section id="sec2">
+    <h2>2. Quais Dados Coletamos</h2>
+
+    <h3>2.1 Dados fornecidos por você</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Dado</th>
+          <th>Obrigatório?</th>
+          <th>Finalidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Endereço de e-mail</strong></td>
+          <td><span class="tag tag-yes">Obrigatório</span></td>
+          <td>Criar e identificar sua conta</td>
+        </tr>
+        <tr>
+          <td><strong>Senha</strong></td>
+          <td><span class="tag tag-yes">Obrigatório</span></td>
+          <td>Autenticação segura (armazenada em hash criptográfico – nunca acessamos sua senha em texto puro)</td>
+        </tr>
+        <tr>
+          <td><strong>Nome de exibição</strong></td>
+          <td><span class="tag tag-yes">Obrigatório</span></td>
+          <td>Identificar você no perfil e nas funcionalidades sociais</td>
+        </tr>
+        <tr>
+          <td><strong>Foto de perfil (avatar)</strong></td>
+          <td><span class="tag tag-opt">Opcional</span></td>
+          <td>Personalizar seu perfil; exibida no ranking e feed social (você pode usar um emoji no lugar)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2.2 Conteúdo gerado por você</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Dado</th>
+          <th>Finalidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nome, descrição, categoria e configurações de cada hábito</td>
+          <td>Exibir e gerenciar seus hábitos no app</td>
+        </tr>
+        <tr>
+          <td>Registros diários de conclusão (data e valor)</td>
+          <td>Calcular streaks, taxa de conclusão e relatórios de progresso</td>
+        </tr>
+        <tr>
+          <td>Idioma, tema e horários de notificação preferidos</td>
+          <td>Personalizar a experiência do app</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2.3 Dados calculados automaticamente</h3>
+    <ul>
+      <li>Sequência de dias consecutivos (<em>streak</em>) por hábito</li>
+      <li>Conquistas e badges desbloqueadas</li>
+      <li>Pontuação semanal para o ranking entre amigos</li>
+    </ul>
+
+    <h3>2.4 Dados de atividade social</h3>
+    <ul>
+      <li>Lista de amizades e pedidos de amizade enviados/recebidos</li>
+      <li>Participação e progresso em desafios em grupo</li>
+      <li>Eventos publicados no feed social (ex.: streak alcançado, conquista desbloqueada)</li>
+      <li>Reações a eventos de outros usuários</li>
+    </ul>
+
+    <h3>2.5 Dados que NÃO coletamos</h3>
+    <div class="card">
+      <ul>
+        <li>Localização GPS ou geolocalização</li>
+        <li>Dados de pagamento ou informações financeiras</li>
+        <li>Contatos da agenda do dispositivo</li>
+        <li>Acesso à câmera (apenas galeria, mediante permissão explícita)</li>
+        <li>Dados de navegação na web ou histórico de buscas</li>
+        <li>Dados biométricos</li>
+        <li>Dados de saúde ou fitness do sistema operacional</li>
+        <li>Identificadores de publicidade (IDFA/GAID)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="sec3">
+    <h2>3. Como Usamos seus Dados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Finalidade</th>
+          <th>Dados utilizados</th>
+          <th>Base legal (LGPD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Criar e autenticar sua conta</td>
+          <td>E-mail, senha</td>
+          <td>Execução de contrato (Art. 7º, V)</td>
+        </tr>
+        <tr>
+          <td>Sincronizar seus hábitos na nuvem</td>
+          <td>Dados de hábitos e conclusões</td>
+          <td>Execução de contrato (Art. 7º, V)</td>
+        </tr>
+        <tr>
+          <td>Exibir seu perfil, ranking e feed social</td>
+          <td>Nome, avatar, pontuação</td>
+          <td>Execução de contrato (Art. 7º, V)</td>
+        </tr>
+        <tr>
+          <td>Enviar notificações locais de lembrete</td>
+          <td>Configurações de notificação, dados de hábitos</td>
+          <td>Consentimento (Art. 7º, I)</td>
+        </tr>
+        <tr>
+          <td>Calcular streaks, conquistas e gamificação</td>
+          <td>Registros de conclusão e datas</td>
+          <td>Execução de contrato (Art. 7º, V)</td>
+        </tr>
+        <tr>
+          <td>Suporte ao usuário e resposta a solicitações</td>
+          <td>E-mail, dados da conta</td>
+          <td>Legítimo interesse (Art. 7º, IX)</td>
+        </tr>
+        <tr>
+          <td>Cumprir obrigações legais</td>
+          <td>Dados necessários conforme lei</td>
+          <td>Obrigação legal (Art. 7º, II)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="highlight">
+      <strong>Não utilizamos seus dados para publicidade, venda a terceiros ou criação de perfis comportamentais para fins comerciais.</strong>
+    </div>
+  </section>
+
+  <section id="sec4">
+    <h2>4. Permissões do Dispositivo</h2>
+
+    <div class="card">
+      <div class="card-title">
+        📷&nbsp; Galeria / Biblioteca de Mídia
+        <span class="tag tag-opt">Opcional</span>
+      </div>
+      <p>
+        Solicitada <strong>apenas quando você decide adicionar uma foto</strong> como avatar de perfil.
+        A imagem selecionada é enviada ao nosso servidor (Supabase Storage) para exibição no app.
+        Você pode usar um emoji no lugar da foto e nunca precisar conceder esta permissão.
+      </p>
+      <p><strong>Acesso à câmera:</strong> <span class="tag tag-no">Não solicitado</span> — apenas seleção da galeria.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        🔔&nbsp; Notificações
+        <span class="tag tag-opt">Opcional</span>
+      </div>
+      <p>
+        Utilizada para enviar lembretes locais de hábitos, aviso de streak em risco e resumo noturno.
+        Todas as notificações são <strong>geradas e processadas localmente no seu dispositivo</strong> —
+        nenhum serviço de push externo (como FCM ou APNs) é usado para entregar conteúdo.
+        Você pode desativar as notificações nas configurações do app ou do sistema operacional a qualquer momento.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        📍&nbsp; Localização GPS
+        <span class="tag tag-no">Não utilizada</span>
+      </div>
+      <p>O Habitus não solicita e não acessa sua localização geográfica em nenhuma circunstância.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        👥&nbsp; Contatos / Agenda
+        <span class="tag tag-no">Não utilizada</span>
+      </div>
+      <p>O Habitus não acessa sua agenda de contatos. Amizades são feitas por busca de nome de usuário dentro do app.</p>
+    </div>
+  </section>
+
+  <section id="sec5">
+    <h2>5. Compartilhamento e Provedores de Serviço</h2>
+
+    <div class="highlight">
+      <strong>Não vendemos, alugamos nem comercializamos seus dados pessoais com terceiros para fins publicitários ou quaisquer outros fins comerciais.</strong>
+    </div>
+
+    <h3>5.1 Provedores de serviço (subprocessadores)</h3>
+    <p>
+      Para operação do aplicativo, utilizamos os seguintes provedores que processam dados em
+      nosso nome, sob contratos de proteção de dados e políticas de privacidade próprias:
+    </p>
+
+    <div class="store-section">
+      <div class="store-section-header" style="background:#E8EAF6;color:#1A237E;border-bottom:2px solid #C5CAE9;">
+        Supabase (Backend Principal)
+      </div>
+      <div class="store-section-body">
+        <ul>
+          <li><strong>Serviços utilizados:</strong> Banco de dados PostgreSQL, autenticação de usuários (Supabase Auth) e armazenamento de arquivos (bucket de avatares)</li>
+          <li><strong>Dados transmitidos:</strong> dados de conta, hábitos, registros de conclusão, perfil, dados sociais e foto de avatar</li>
+          <li><strong>Finalidade:</strong> Infraestrutura do app – sem essa transmissão o app não funciona</li>
+          <li><strong>Conformidade:</strong> Supabase opera em conformidade com GDPR e aplica criptografia TLS em todas as transmissões</li>
+          <li><strong>Política de privacidade:</strong> <a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="store-section">
+      <div class="store-section-header" style="background:#E8F5E9;color:#1B5E20;border-bottom:2px solid #C8E6C9;">
+        Expo Application Services (Build e distribuição)
+      </div>
+      <div class="store-section-body">
+        <ul>
+          <li><strong>Serviços utilizados:</strong> Compilação e distribuição do aplicativo nas lojas</li>
+          <li><strong>Dados transmitidos:</strong> Código-fonte do app (não dados de usuários)</li>
+          <li><strong>Política de privacidade:</strong> <a href="https://expo.dev/privacy" target="_blank">expo.dev/privacy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>5.2 Divulgação por obrigação legal</h3>
+    <p>Podemos divulgar dados pessoais apenas quando:</p>
+    <ul>
+      <li>Exigido por lei, ordem judicial ou autoridade competente</li>
+      <li>Necessário para proteger direitos, propriedade ou segurança do desenvolvedor ou de terceiros</li>
+      <li>Você tiver dado consentimento explícito</li>
+    </ul>
+
+    <h3>5.3 O que não fazemos</h3>
+    <ul>
+      <li>Não compartilhamos dados com redes de publicidade</li>
+      <li>Não usamos Google Analytics, Firebase Analytics, Facebook SDK ou qualquer ferramenta de rastreamento de terceiros</li>
+      <li>Não repassamos dados para empresas parceiras para fins de marketing</li>
+    </ul>
+  </section>
+
+  <section id="sec6">
+    <h2>6. Funcionalidades Sociais</h2>
+    <p>O Habitus possui funcionalidades sociais opcionais. Veja exatamente quais dados são visíveis para outros usuários:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Dado</th>
+          <th>Visível para amigos</th>
+          <th>Visível publicamente</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nome de exibição</td>
+          <td><span class="tag tag-yes">Sim</span></td>
+          <td><span class="tag tag-no">Não</span></td>
+        </tr>
+        <tr>
+          <td>Avatar (emoji ou foto)</td>
+          <td><span class="tag tag-yes">Sim</span></td>
+          <td><span class="tag tag-no">Não</span></td>
+        </tr>
+        <tr>
+          <td>Pontuação semanal no ranking</td>
+          <td><span class="tag tag-yes">Sim</span></td>
+          <td><span class="tag tag-no">Não</span></td>
+        </tr>
+        <tr>
+          <td>Eventos do feed (streaks, conquistas)</td>
+          <td><span class="tag tag-yes">Sim</span></td>
+          <td><span class="tag tag-no">Não</span></td>
+        </tr>
+        <tr>
+          <td>Participação em desafios em grupo</td>
+          <td><span class="tag tag-yes">Participantes do desafio</span></td>
+          <td><span class="tag tag-no">Não</span></td>
+        </tr>
+        <tr>
+          <td>Endereço de e-mail</td>
+          <td><span class="tag tag-no">Nunca</span></td>
+          <td><span class="tag tag-no">Nunca</span></td>
+        </tr>
+        <tr>
+          <td>Conteúdo individual dos hábitos</td>
+          <td><span class="tag tag-no">Nunca</span></td>
+          <td><span class="tag tag-no">Nunca</span></td>
+        </tr>
+        <tr>
+          <td>Histórico de conclusões</td>
+          <td><span class="tag tag-no">Nunca</span></td>
+          <td><span class="tag tag-no">Nunca</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="sec7">
+    <h2>7. Armazenamento e Segurança</h2>
+
+    <h3>7.1 Onde seus dados são armazenados</h3>
+    <table>
+      <thead>
+        <tr><th>Local</th><th>O que é armazenado</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Servidores Supabase (nuvem)</strong></td>
+          <td>Conta, hábitos, conquistas, dados sociais, foto de avatar</td>
+        </tr>
+        <tr>
+          <td><strong>Dispositivo – AsyncStorage</strong></td>
+          <td>Cache local de hábitos, preferências de tema e idioma</td>
+        </tr>
+        <tr>
+          <td><strong>Dispositivo – SecureStore</strong><br/>(iOS Keychain / Android Keystore)</td>
+          <td>Token de autenticação (sessão), protegido pelo sistema operacional</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>7.2 Medidas de segurança</h3>
+    <ul class="checklist">
+      <li>Senhas armazenadas exclusivamente em formato de hash criptográfico (gerenciado pelo Supabase Auth)</li>
+      <li>Tokens de sessão armazenados no compartimento seguro do sistema operacional (iOS Keychain / Android Keystore)</li>
+      <li>Row Level Security (RLS) ativado em todas as tabelas do banco de dados — cada usuário acessa apenas seus próprios dados</li>
+      <li>Toda comunicação entre o app e o servidor é criptografada via HTTPS/TLS</li>
+      <li>Fotos de avatar armazenadas com identificador único por usuário, sem metadados de localização</li>
+    </ul>
+
+    <div class="warning">
+      <strong>Nenhum sistema é 100% seguro.</strong> Caso identifique vulnerabilidade ou uso não autorizado dos seus dados, entre em contato imediatamente em <a href="mailto:lucassouzasantos336@gmail.com">lucassouzasantos336@gmail.com</a>.
+    </div>
+  </section>
+
+  <section id="sec8">
+    <h2>8. Retenção e Exclusão de Dados</h2>
+
+    <h3>8.1 Por quanto tempo guardamos seus dados</h3>
+    <p>Seus dados são mantidos enquanto sua conta estiver ativa. As únicas exceções são:</p>
+    <ul>
+      <li><strong>Obrigação legal:</strong> se a lei exigir retenção por período específico</li>
+      <li><strong>Litígios:</strong> durante a resolução de disputas em que os dados sejam necessários</li>
+    </ul>
+
+    <h3>8.2 Como excluir seus dados</h3>
+    <p>Você pode solicitar a exclusão completa da sua conta e de todos os seus dados a qualquer momento:</p>
+    <ol>
+      <li>Envie um e-mail para <a href="mailto:lucassouzasantos336@gmail.com">lucassouzasantos336@gmail.com</a> com o assunto <strong>"Excluir minha conta – Habitus"</strong></li>
+      <li>Confirmaremos o recebimento em até 2 dias úteis</li>
+      <li>A exclusão completa será concluída em até <strong>30 dias</strong></li>
+    </ol>
+
+    <h3>8.3 O que acontece ao excluir um hábito</h3>
+    <p>
+      Ao excluir um hábito manualmente dentro do app, todos os registros de conclusão e
+      conquistas vinculados a esse hábito são removidos imediatamente e de forma irreversível.
+    </p>
+
+    <h3>8.4 Dados retidos após exclusão da conta</h3>
+    <p>
+      Após a exclusão da conta, nenhum dado pessoal identificável é mantido. Dados
+      anonimizados e agregados (sem identificação) podem ser retidos para fins de melhoria do produto.
+    </p>
+  </section>
+
+  <section id="sec9">
+    <h2>9. Proteção de Menores de Idade</h2>
+
+    <h3>9.1 Usuários menores de 13 anos (COPPA)</h3>
+    <p>
+      O Habitus <strong>não é direcionado a crianças menores de 13 anos</strong>.
+      Conforme exigido pela COPPA (Children's Online Privacy Protection Act) e pela
+      LGPD (Art. 14), o cadastro de usuários menores de 13 anos somente é permitido
+      mediante <strong>consentimento verificável e expresso do responsável legal</strong>.
+    </p>
+    <p>
+      Se tomarmos conhecimento de que coletamos dados de uma criança menor de 13 anos
+      sem o consentimento parental adequado, esses dados serão excluídos imediatamente.
+      Para reportar: <a href="mailto:lucassouzasantos336@gmail.com">lucassouzasantos336@gmail.com</a>.
+    </p>
+
+    <h3>9.2 Usuários entre 13 e 17 anos</h3>
+    <p>
+      Usuários adolescentes entre 13 e 17 anos podem utilizar o Habitus. Para usuários
+      nessa faixa etária, recomendamos fortemente o acompanhamento de pais ou responsáveis.
+      Pais e responsáveis podem solicitar acesso, correção ou exclusão dos dados de seus
+      filhos pelo e-mail de contato desta política.
+    </p>
+  </section>
+
+  <section id="sec10">
+    <h2>10. Seus Direitos (LGPD / GDPR)</h2>
+    <p>
+      Em conformidade com a LGPD e o GDPR, você possui os seguintes direitos em relação
+      aos seus dados pessoais:
+    </p>
+    <table>
+      <thead>
+        <tr><th>Direito</th><th>O que significa</th><th>Como exercer</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Confirmação e Acesso</strong></td>
+          <td>Saber quais dados seus temos e obter uma cópia</td>
+          <td rowspan="7" style="vertical-align:middle;text-align:center;">
+            <a href="mailto:lucassouzasantos336@gmail.com">lucassouzasantos336@gmail.com</a><br/>
+            <small>Resposta em até 15 dias úteis</small>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Correção</strong></td>
+          <td>Corrigir dados incompletos, inexatos ou desatualizados</td>
+        </tr>
+        <tr>
+          <td><strong>Exclusão</strong></td>
+          <td>Excluir dados tratados com base em consentimento</td>
+        </tr>
+        <tr>
+          <td><strong>Portabilidade</strong></td>
+          <td>Receber seus dados em formato estruturado e legível por máquina</td>
+        </tr>
+        <tr>
+          <td><strong>Revogação do consentimento</strong></td>
+          <td>Retirar consentimento para tratamentos baseados nele (ex.: notificações)</td>
+        </tr>
+        <tr>
+          <td><strong>Oposição</strong></td>
+          <td>Opor-se a tratamentos realizados por legítimo interesse</td>
+        </tr>
+        <tr>
+          <td><strong>Informação sobre compartilhamento</strong></td>
+          <td>Saber com quais terceiros seus dados foram compartilhados</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Você também tem o direito de apresentar reclamação à <strong>Autoridade Nacional de
+      Proteção de Dados (ANPD)</strong>: <a href="https://www.gov.br/anpd" target="_blank">www.gov.br/anpd</a>.
+    </p>
+  </section>
+
+  <section id="sec11">
+    <h2>11. Notificações</h2>
+    <p>O Habitus pode enviar as seguintes notificações locais ao seu dispositivo:</p>
+    <table>
+      <thead>
+        <tr><th>Tipo</th><th>Quando é enviada</th><th>Pode desativar?</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Lembrete diário de hábitos</td>
+          <td>Horário configurável (padrão: 08h00)</td>
+          <td><span class="tag tag-yes">Sim</span></td>
+        </tr>
+        <tr>
+          <td>Resumo noturno</td>
+          <td>Horário configurável (padrão: 21h00)</td>
+          <td><span class="tag tag-yes">Sim</span></td>
+        </tr>
+        <tr>
+          <td>Streak em risco</td>
+          <td>Às 23h00 quando há streak ativo sem conclusão no dia</td>
+          <td><span class="tag tag-yes">Sim</span></td>
+        </tr>
+        <tr>
+          <td>Marco de streak</td>
+          <td>Ao atingir 3, 7, 14, 21, 30, 50 ou 100 dias consecutivos</td>
+          <td><span class="tag tag-yes">Sim</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="highlight">
+      Todas as notificações são processadas <strong>localmente no dispositivo</strong>.
+      Nenhum servidor externo de push notifications envia conteúdo para o seu dispositivo.
+    </div>
+    <p>
+      Para desativar: acesse <strong>Configurações → Notificações</strong> dentro do app,
+      ou desative nas configurações de notificações do seu dispositivo (iOS ou Android).
+    </p>
+  </section>
+
+  <section id="sec12">
+    <h2>12. Transferência Internacional de Dados</h2>
+    <p>
+      Seus dados são transmitidos e armazenados nos servidores do <strong>Supabase</strong>,
+      que podem estar localizados fora do Brasil. O Supabase implementa salvaguardas adequadas
+      para transferências internacionais, incluindo cláusulas contratuais padrão compatíveis
+      com o GDPR e práticas alinhadas à LGPD.
+    </p>
+    <p>
+      Para mais informações sobre como o Supabase protege dados em transferências
+      internacionais, consulte <a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy</a>.
+    </p>
+  </section>
+
+  <section id="sec13">
+    <h2>13. Guia para as Lojas: Data Safety e Privacy Labels</h2>
+    <p>
+      Esta seção é um guia de referência para preenchimento dos formulários obrigatórios
+      de cada loja, garantindo consistência entre o formulário e esta política.
+    </p>
+
+    <div class="store-section">
+      <div class="store-section-header google">
+        ▶&nbsp; Google Play Store — Formulário "Segurança dos Dados" (Data Safety)
+      </div>
+      <div class="store-section-body">
+        <p style="margin-bottom:14px;">Preencha o formulário no Play Console conforme abaixo:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Categoria de dado</th>
+              <th>Tipo</th>
+              <th>Coletado?</th>
+              <th>Compartilhado?</th>
+              <th>Obrigatório?</th>
+              <th>Finalidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Informações pessoais</td>
+              <td>Endereço de e-mail</td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-no">Não</span></td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td>Funcionalidade do app, Gerenciamento de conta</td>
+            </tr>
+            <tr>
+              <td>Informações pessoais</td>
+              <td>Nome (nome de exibição)</td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-yes">Entre usuários</span></td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td>Funcionalidade do app, Gerenciamento de conta</td>
+            </tr>
+            <tr>
+              <td>Fotos e vídeos</td>
+              <td>Fotos do usuário</td>
+              <td><span class="tag tag-opt">Opcional</span></td>
+              <td><span class="tag tag-yes">Entre usuários</span></td>
+              <td><span class="tag tag-no">Não</span></td>
+              <td>Funcionalidade do app (avatar de perfil)</td>
+            </tr>
+            <tr>
+              <td>Conteúdo do usuário</td>
+              <td>Conteúdo gerado (hábitos)</td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-no">Não</span></td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td>Funcionalidade do app</td>
+            </tr>
+            <tr>
+              <td>Atividade no app</td>
+              <td>Interações e atividade</td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-yes">Entre usuários</span></td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td>Funcionalidade do app, Gamificação</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Perguntas adicionais do formulário:</strong></p>
+        <ul>
+          <li><strong>Os dados são criptografados em trânsito?</strong> Sim (HTTPS/TLS)</li>
+          <li><strong>O app fornece mecanismo para solicitar exclusão de dados?</strong> Sim (via e-mail)</li>
+          <li><strong>O app é direcionado a crianças?</strong> Não exclusivamente — contém conteúdo adequado a crianças com supervisão dos pais</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="store-section">
+      <div class="store-section-header apple">
+        🍎&nbsp; Apple App Store — App Privacy Labels (App Store Connect)
+      </div>
+      <div class="store-section-body">
+        <p style="margin-bottom:14px;">Preencha os Privacy Labels no App Store Connect conforme abaixo:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Categoria</th>
+              <th>Tipo de dado</th>
+              <th>Coletado?</th>
+              <th>Vinculado ao usuário?</th>
+              <th>Para rastreamento?</th>
+              <th>Finalidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Informações de contato</td>
+              <td>Endereço de e-mail</td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-no">Não</span></td>
+              <td>Funcionalidade do app</td>
+            </tr>
+            <tr>
+              <td>Informações de contato</td>
+              <td>Nome (nome de exibição)</td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-no">Não</span></td>
+              <td>Funcionalidade do app</td>
+            </tr>
+            <tr>
+              <td>Conteúdo do usuário</td>
+              <td>Fotos (avatar)</td>
+              <td><span class="tag tag-opt">Opcional</span></td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-no">Não</span></td>
+              <td>Funcionalidade do app</td>
+            </tr>
+            <tr>
+              <td>Conteúdo do usuário</td>
+              <td>Outro conteúdo (hábitos)</td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-no">Não</span></td>
+              <td>Funcionalidade do app</td>
+            </tr>
+            <tr>
+              <td>Identificadores</td>
+              <td>ID do usuário</td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-no">Não</span></td>
+              <td>Funcionalidade do app</td>
+            </tr>
+            <tr>
+              <td>Dados de uso</td>
+              <td>Interação com o produto</td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-yes">Sim</span></td>
+              <td><span class="tag tag-no">Não</span></td>
+              <td>Funcionalidade do app, Gamificação</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Não declarar</strong> as seguintes categorias (não coletadas):</p>
+        <ul>
+          <li>Localização (precisa ou aproximada)</li>
+          <li>Saúde e fitness</li>
+          <li>Informações financeiras</li>
+          <li>Informações sensíveis</li>
+          <li>Contatos da agenda</li>
+          <li>Histórico de navegação / busca</li>
+          <li>Diagnósticos / dados de desempenho</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warning">
+      <strong>Importante:</strong> Após preencher os formulários nas lojas, verifique a consistência entre o que foi declarado nos formulários e o que está descrito nesta política. Inconsistências podem causar rejeição do app.
+    </div>
+  </section>
+
+  <section id="sec14">
+    <h2>14. Alterações nesta Política</h2>
+    <p>
+      Podemos atualizar esta Política de Privacidade periodicamente. Quando realizarmos
+      alterações relevantes, notificaremos você por meio de:
+    </p>
+    <ul>
+      <li>Aviso em destaque no aplicativo no próximo acesso</li>
+      <li>E-mail enviado ao endereço cadastrado (para alterações substanciais)</li>
+    </ul>
+    <p>
+      As alterações entram em vigor <strong>7 dias após a notificação</strong>. O uso
+      continuado do aplicativo após esse prazo constitui aceite da nova versão.
+      A data de última atualização está sempre indicada no topo deste documento.
+    </p>
+    <p>Versões anteriores desta política podem ser solicitadas pelo e-mail de contato.</p>
+  </section>
+
+  <section id="sec15">
+    <h2>15. Contato</h2>
+    <div class="card">
+      <p>Para dúvidas, exercício de direitos ou reclamações sobre privacidade e dados pessoais:</p>
+      <br/>
+      <p><strong>Responsável:</strong> Lucas Souza Santos</p>
+      <p><strong>E-mail:</strong> <a href="mailto:lucassouzasantos336@gmail.com">lucassouzasantos336@gmail.com</a></p>
+      <p><strong>Assunto recomendado:</strong> Privacidade – Habitus</p>
+      <p><strong>Prazo de resposta:</strong> até 15 dias úteis</p>
+    </div>
+    <p>
+      Reclamações também podem ser encaminhadas à
+      <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong>:
+      <a href="https://www.gov.br/anpd" target="_blank">www.gov.br/anpd</a>.
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  <p><strong>Habitus – Rastreador de Hábitos</strong></p>
+  <p>© 2026 Lucas Souza Santos. Todos os direitos reservados.</p>
+  <p style="margin-top:8px;">
+    Elaborado em conformidade com a <strong>LGPD (Lei nº 13.709/2018)</strong>,
+    <strong>GDPR</strong>, <strong>COPPA</strong>,
+    <strong>Políticas de Dados do Usuário do Google Play</strong> e
+    <strong>Diretrizes de Revisão da Apple App Store</strong>.
+  </p>
+</footer>
+
+</body>
+</html>

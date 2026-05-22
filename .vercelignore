@@ -1,0 +1,13 @@
+node_modules
+src
+assets
+supabase
+App.tsx
+index.ts
+app.json
+babel.config.js
+metro.config.js
+tsconfig.json
+package.json
+package-lock.json
+politica-de-privacidade.html
